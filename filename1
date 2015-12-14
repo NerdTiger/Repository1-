@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<title>Angular Dependency  Injection</title>
+</head>
+ <body >
+ <div ng-controller="ControllerA">
+<h2>Application Message :</h2>
+{{message}}
+ </div>
+<hr> 
+ <div ng-controller="ControllerB">
+<h2>Module Message :</h2>
+{{message}}
+ </div>
+ <script src="./JSFrameworks/angular.min.js"></script>
+ <script src="./js/injector.js"></script>
+ <script >
+ //functionname(0,1,2);
+ //alert(functionname.name);
+ 
+ function functionname(arg0,arg1,arg2)
+ {
+ alert('function declaration');
+ }
+ 
+ var functionexpression = 
+ function(arg0,arg1,arg2)
+ {
+ alert('function expression');
+ };
+ //functionexpression(1,1,1);//execute it after definition, becasue functionexpression is a variable
+ var functionexpression2 = functionexpression;
+ //functionexpression2(1,1,1);//execute it after definition, becasue functionexpression is a variable
+ var returnfunction = function()
+ {
+ return function(){alert('return function');}
+ 
+ }
+ returnfunction()();//
+ </script>
+ </body>
+</html>
